@@ -10,6 +10,14 @@ var schedule = {};
 // }
 
 var loadSchedule = function () {
+    //var dateFormat = "ddd, MMM Do";
+    // var todaysDate = moment();
+    var today = moment().format("ddd, MMM Do");
+    console.log(today);
+    // var today = moment(todaysDate.format('ddd, MMM Do'));
+    $("#currentDay").replaceWith(today).addClass("time-block");
+    // today.text = todaysDate.format('ddd, MMM Do');
+
     schedule = JSON.parse(localStorage.getItem("schedule"));
 
 
@@ -26,11 +34,20 @@ var loadSchedule = function () {
             // 3: [],
             // 4: [],
             // 5:[]
-        }
+        };   
     }
+
+    $.each(schedule, function(list, arr) {
+        console.log(list, arr);
+
+        arr.forEach(function(schedule) {
+            setSchedule(schedule.text, schedule.id);
+        });
         // else {
         //     setSchedule();
         // }
+});
+
 };
 
 var saveSchedule = function () {
@@ -74,17 +91,30 @@ $(".schedule-box").on("click", function () {
 //     $(this).replaceWith(taskP);
 // });
 
-// var setSchedule = function() {
-//     var scheduleBoxText = $("textarea").val();
-//     console.log(scheduleBoxText);
+var setSchedule = function() {
+    var scheduleBoxText = $("textarea").val();
+    console.log(scheduleBoxText);
 
-//     var id = $("div").closest(".row").attr("id").replace("-", "");
+    var id = $("div").closest(".row").attr("id").replace("-", "");
 
-//     schedule.id.push({
-//         text: scheduleBoxText
-//     });
-//     console.log(schedule);
-//     saveSchedule();
+    schedule.id.push({
+        text: scheduleBoxText
+    });
+    console.log(schedule);
+    saveSchedule();
+};
+
+// var setSchedule = function(scheduleText, scheduleId) {
+//     var scheduleDiv = $("<div>").addClass("col-8 future description schedule-box").attr("id", scheduleId).text(scheduleText);
+//     $(schedule).append(scheduleDiv);    
+// };
+// // var setSchedule = function(scheduleText, scheduleId) {
+// // $("div").attr(".schedule-box").text = scheduleText;
+// // //scheduleItem.append(scheduleText);
+// // var scheduleItemId = $("div").closest(".row").attr(".time");
+// // // scheduleItem.append(scheduleItemId);
+// // console.log(scheduleText, scheduleId, scheduleItem);
+
 // };
 
 $(".saveBtn").click(function() {
@@ -105,7 +135,7 @@ $(".saveBtn").click(function() {
     //get the tasks's position in the list of other li elements
     //var index = $("div").closest(".time").index();
 //console.log(index);
-    schedule[id].text = text;
+    schedule.text = text;
     // saveSchedule();
 
     schedule.id.push({
@@ -119,7 +149,7 @@ $(".saveBtn").click(function() {
         //replace textarea with a p element
 $("textarea").replaceWith(scheduleDiv);
     saveSchedule();
-    console.log(schedule[id].text);
+    // console.log(schedule[id].text);
 
 });
 

@@ -4,6 +4,7 @@ var time = ["08", "09", "10", "11", "12", "13", "14", "15", "16", "17"];
 var containerEl = $(".container");
 
 var auditTime = function () {
+    debugger;
 
     todayTime = moment().format("HH");
 
@@ -20,31 +21,31 @@ var auditTime = function () {
             if (scheduleTime === 08) {
                 $("#scheduleEight").addClass("future")
             }
-            if (scheduleTime === 09) {
-                $("#scheduleNine").addCLass("future")
+            else if (scheduleTime === 09) {
+                $("#scheduleNine").addClass("future")
             }
-            if (scheduleTime === 10) {
-                $("#scheduleTen").addCLass("future")
+            else if (scheduleTime === 10) {
+                $("#scheduleTen").addClass("future")
             }
-            if (scheduleTime === 11) {
+            else if (scheduleTime === 11) {
                 $("#scheduleEleven").addClass("future")
             }
-            if (scheduleTime === 12) {
+            else if (scheduleTime === 12) {
                 $("#scheduleTwelve").addClass("future")
             }
-            if (scheduleTime === 13) {
+            else if (scheduleTime === 13) {
                 $("#scheduleOne").addClass("future")
             }
-            if (scheduleTime === 14) {
+            else if (scheduleTime === 14) {
                 $("#scheduleTwo").addClass("future")
             }
-            if (scheduleTime === 15) {
+            else if (scheduleTime === 15) {
                 $("#scheduleThree").addClass("future")
             }
-            if (scheduleTime === 16) {
+            else if (scheduleTime === 16) {
                 $("#scheduleFour").addClass("future")
             }
-            if (scheduleTime === 17) {
+            else if (scheduleTime === 17) {
                 $("#scheduleFive").addClass("future")
             }
         }
@@ -55,31 +56,31 @@ var auditTime = function () {
             if (scheduleTime === 08) {
                 $("#scheduleEight").addClass("past")
             }
-            if (scheduleTime === 09) {
+            else if (scheduleTime === 09) {
                 $("#scheduleNine").addClass("past")
             }
-            if (scheduleTime === 10) {
+            else if (scheduleTime === 10) {
                 $("#scheduleTen").addClass("past")
             }
-            if (scheduleTime === 11) {
+            else if (scheduleTime === 11) {
                 $("#scheduleEleven").addClass("past")
             }
-            if (scheduleTime === 12) {
+            else if (scheduleTime === 12) {
                 $("#scheduleTwelve").addClass("past")
             }
-            if (scheduleTime === 13) {
+            else if (scheduleTime === 13) {
                 $("#scheduleOne").addClass("past")
             }
-            if (scheduleTime === 14) {
+            else if (scheduleTime === 14) {
                 $("#scheduleTwo").addClass("past")
             }
-            if (scheduleTime === 15) {
+            else if (scheduleTime === 15) {
                 $("#scheduleThree").addClass("past")
             }
-            if (scheduleTime === 16) {
+            else if (scheduleTime === 16) {
                 $("#scheduleFour").addClass("past")
             }
-            if (scheduleTime === 17) {
+            else if (scheduleTime === 17) {
                 $("#scheduleFive").addClass("past")
             }
         }
@@ -89,31 +90,31 @@ var auditTime = function () {
             if (scheduleTime === 08) {
                 $("#scheduleEight").addClass("present")
             }
-            if (scheduleTime === 09) {
+            else if (scheduleTime === 09) {
                 $("#scheduleNine").addClass("present")
             }
-            if (scheduleTime === 10) {
+            else if (scheduleTime === 10) {
                 $("#scheduleTen").addClass("present")
             }
-            if (scheduleTime === 11) {
+            else if (scheduleTime === 11) {
                 $("#scheduleEleven").addClass("present")
             }
-            if (scheduleTime === 12) {
+            else if (scheduleTime === 12) {
                 $("#scheduleTwelve").addClass("present")
             }
-            if (scheduleTime === 13) {
+            else if (scheduleTime === 13) {
                 $("#scheduleOne").addClass("present")
             }
-            if (scheduleTime === 14) {
+            else if (scheduleTime === 14) {
                 $("#scheduleTwo").addClass("present")
             }
-            if (scheduleTime === 15) {
+            else if (scheduleTime === 15) {
                 $("#scheduleThree").addClass("present")
             }
-            if (scheduleTime === 16) {
+            else if (scheduleTime === 16) {
                 $("#scheduleFour").addClass("present")
             }
-            if (scheduleTime === 17) {
+            else if (scheduleTime === 17) {
                 $("#scheduleFive").addClass("present")
             }
         }

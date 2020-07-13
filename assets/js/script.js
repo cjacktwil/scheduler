@@ -5,8 +5,7 @@ var containerEl = $(".container");
 
 var auditTime = function () {
 
-    todayTime = 11;
-    //moment().format("HH");
+    todayTime = moment().format("HH");
 
     //iterate through time array to determine if schedule time is past, present or future
     for (i = 0; i < time.length; i++) {

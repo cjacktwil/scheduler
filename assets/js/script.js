@@ -5,7 +5,8 @@ var containerEl = $(".container");
 
 var auditTime = function () {
 
-    todayTime = moment().format("HH");
+    todayTime = 11;
+    //moment().format("HH");
 
     //iterate through time array to determine if schedule time is past, present or future
     for (i = 0; i < time.length; i++) {
@@ -120,9 +121,6 @@ var auditTime = function () {
     }
 };
 
-auditTime();
-
-
 var loadSchedule = function () {
     //populate today's date
     var today = moment().format("ddd, MMM Do");
@@ -173,27 +171,16 @@ var loadSchedule = function () {
     var scheduleFiveEl = $("#scheduleFive")
     scheduleFiveEl.append(savedScheduleFive);
 
+    auditTime();
 
 };
 
 loadSchedule();
 
 
-//turn schedule box to text area
-$(".schedule-box").on("click", function () {
-    event.preventDefault();
-
-    var text = $(this).text().trim();
-    // console.log(text);
-
-    var textInput = $("<textarea>").val(text).addClass("col-8 description schedule-box");
-
-    $(this).replaceWith(textInput)
-
-});
-
 //save information to local storage when click save button 
 $(".saveBtn").on("click", function () {
+    auditTime();
     var saveButton = event.currentTarget;
     var saveButtonId = $(saveButton).attr("id");
     var text = $(saveButton).prev().val();
